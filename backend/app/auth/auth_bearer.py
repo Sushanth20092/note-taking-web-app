@@ -1,4 +1,3 @@
-# backend/app/auth/auth_bearer.py
 from fastapi import Request, HTTPException
 from fastapi.security import HTTPBearer, HTTPAuthorizationCredentials
 from jose import jwt, JWTError
@@ -14,5 +13,5 @@ class JWTBearer(HTTPBearer):
             payload = jwt.decode(token, settings.secret_key, algorithms=[settings.algorithm])
         except JWTError:
             raise HTTPException(status_code=403, detail="Invalid or expired token.")
-        # return payload so route can read user info if needed
+  
         return payload

@@ -1,4 +1,3 @@
-# backend/app/routes/auth_routes.py
 from fastapi import APIRouter, Depends, HTTPException, status
 from sqlalchemy.orm import Session
 from app.db.database import get_db
@@ -12,7 +11,7 @@ router = APIRouter(prefix="/auth", tags=["auth"])
 
 @router.post("/signup", status_code=status.HTTP_201_CREATED)
 def signup(payload: UserCreate, db: Session = Depends(get_db)):
-    # check existing email
+    
     existing = db.query(User).filter(User.user_email == payload.user_email).first()
     if existing:
         raise HTTPException(status_code=400, detail="Email already registered")
