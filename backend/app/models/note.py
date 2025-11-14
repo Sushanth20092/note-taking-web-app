@@ -1,7 +1,7 @@
 import uuid
 from sqlalchemy import Column, String, DateTime, ForeignKey
 from datetime import datetime
-from app.db.base import Base
+from app.db.database import Base
 
 def gen_uuid():
     return str(uuid.uuid4())
