@@ -75,8 +75,11 @@ One command to run the entire project
 Create .env inside backend folder:
 
 SECRET_KEY="yousecretkey"
+
 DATABASE_URL=mysql+pymysql://notesuser:notespass@db:3306/notesdb
+
 ALGORITHM=HS256
+
 ACCESS_TOKEN_EXPIRE_MINUTES=60
 
 docker-compose down --volumes
