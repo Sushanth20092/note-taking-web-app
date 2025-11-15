@@ -3,7 +3,18 @@ uvicorn[standard]
 SQLAlchemy
 pymysql
 alembic
-passlib[bcrypt]
+
+# Crypto & Auth
 python-jose
-pydantic
 python-dotenv
+cryptography
+
+# Pydantic
+pydantic
+pydantic[email]
+pydantic-settings
+email-validator
+
+# Password hashing (Stable versions)
+passlib[bcrypt]
+bcrypt==4.0.1   # <-- IMPORTANT FIX
